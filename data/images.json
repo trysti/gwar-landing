@@ -16,15 +16,15 @@
     "og": "w1-3dda2429-og.jpg"
   },
   "W2": {
-    "base": "w2-c8b218d6",
+    "base": "w2-6578dd0f",
     "widths": [
       480,
       768,
-      1200
+      1024
     ],
-    "width": 1200,
-    "height": 800,
-    "og": "w2-c8b218d6-og.jpg"
+    "width": 1024,
+    "height": 683,
+    "og": "w2-6578dd0f-og.jpg"
   },
   "W3": null,
   "G1": null,
