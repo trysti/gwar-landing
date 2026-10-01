@@ -1,13 +1,13 @@
 // Privacy & cookies policy. Draft – to be reviewed by the owner (and ideally a lawyer)
 // before publishing; controller details are marked todo().
-import { todo } from '../src/todo.mjs';
 
 export const pl = (b) => ({
   title: 'Polityka prywatności i cookies – Bar Gwar',
   description: 'Jak Bar Gwar przetwarza dane osobowe i używa plików cookies na stronie landing.gwar.bar.',
   html: `<h1>Polityka prywatności i cookies</h1>
 <h2>Administrator danych</h2>
-<p>Administratorem danych jest ${todo('pełna nazwa firmy, adres siedziby, NIP – DO UZUPEŁNIENIA')}, prowadzący lokal ${b.name}, ${b.streetAddress}, ${b.addressLocality}. Kontakt: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
+<p>Administratorem danych osobowych jest T&amp;K Investment spółka z ograniczoną odpowiedzialnością, z siedzibą przy ul. Św. Łazarza 3/2, 31-530 Kraków, wpisana do rejestru przedsiębiorców KRS pod numerem 0001029689, NIP: 6751780846, REGON: 524976310 (dalej: „Administrator”).</p>
+<p>Administrator prowadzi lokal ${b.name}, ${b.streetAddress}, ${b.postalCode} ${b.addressLocality}. Kontakt: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
 <h2>Jakie dane zbiera ta strona</h2>
 <ul>
 <li><strong>Bez Twojej zgody</strong> strona nie zapisuje plików cookies analitycznych ani reklamowych. Zapamiętujemy jedynie Twój wybór w banerze zgód (w pamięci przeglądarki).</li>
@@ -31,7 +31,7 @@ export const en = (b) => ({
   description: 'How Bar Gwar handles personal data and cookies on landing.gwar.bar.',
   html: `<h1>Privacy &amp; cookies</h1>
 <h2>Who we are</h2>
-<p>The data controller is ${todo('company name, registered address, tax ID (NIP) – TO BE SUPPLIED')}, which runs ${b.name}, Mostowa Street 8, Krakow, Poland. Contact: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
+<p>The data controller is T&amp;K Investment spółka z ograniczoną odpowiedzialnością, ul. Św. Łazarza 3/2, 31-530 Krakow, Poland, entered in the National Court Register (KRS) under no. 0001029689, tax ID (NIP) 6751780846, REGON 524976310, which runs ${b.name}, Mostowa Street 8, Krakow, Poland. Contact: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
 <h2>What this site collects</h2>
 <ul>
 <li><strong>Without your consent</strong> this site sets no analytics or advertising cookies. We only remember your choice in the cookie banner (in your browser’s storage).</li>
