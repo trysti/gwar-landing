@@ -76,7 +76,7 @@ function mapSketch(c) {
 <text x="330" y="232" fill="#7fa7c9" font-size="14" font-family="Helvetica, Arial, sans-serif">${c.map.river}</text>
 <path d="M205 120 L222 285" stroke="#3a3a3a" stroke-width="12" fill="none" stroke-linecap="round"/>
 <path d="M216 205 L226 290" stroke="#e2e1d8" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
-<text x="208" y="262" fill="#ddd" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif">${c.map.bridge}</text>
+<text x="204" y="214" fill="#ddd" font-size="12" text-anchor="end" font-family="Helvetica, Arial, sans-serif">${c.map.bridge}</text>
 <text x="226" y="160" fill="#ddd" font-size="12" font-family="Helvetica, Arial, sans-serif">Mostowa</text>
 <text x="24" y="120" fill="#888" font-size="16" font-family="Helvetica, Arial, sans-serif" letter-spacing="2">${c.map.north.toUpperCase()}</text>
 <text x="24" y="292" fill="#888" font-size="13" font-family="Helvetica, Arial, sans-serif" letter-spacing="2">${c.map.south.toUpperCase()}</text>
@@ -227,7 +227,8 @@ export function landingPage(ctx) {
     photo(ctx, 'G2', c.garden.photo2Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' }),
   );
   const bookPhoto = photo(ctx, 'W2', c.booking.photoAlt);
-  const split = (has, extra = '') => (has ? `container split ${extra}` : 'container');
+  // Without photos a section becomes one centred column instead of a half-empty two-column grid.
+  const split = (has, extra = '', narrow = true) => (has ? `container split ${extra}` : `container no-split${narrow ? ' narrow' : ''}`);
 
   const tiles = c.whatsHere.tiles
     .map((t) => {
@@ -275,7 +276,7 @@ ${btnCall(c, l, 'hero')}
 </section>
 
 <section id="${a.directions}" aria-labelledby="h-dir">
-<div class="${split(howPhotos, 'split-wide')}">
+<div class="${split(howPhotos, 'split-wide', false)}">
 <div>
 <h2 id="h-dir">${c.how.h2}</h2>
 <p class="address-big"><strong>${address}</strong></p>
@@ -332,7 +333,7 @@ ${bookPhoto}
 </section>
 
 <section id="${a.reviews}" aria-labelledby="h-rev">
-<div class="container">
+<div class="container no-split narrow">
 <h2 id="h-rev">${c.reviews.h2}</h2>
 <p class="rating">${c.reviews.rating(b.reviews)}</p>
 ${quoteHtml}
