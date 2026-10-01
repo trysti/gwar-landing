@@ -3,8 +3,8 @@
   "timezone": "Europe/Warsaw",
   "confirmed": false,
   "_confirmed": "Ustaw true dopiero po ujednoliceniu z Profilem Google. Bez tego status Otwarte/Zamknięte się nie wyświetla.",
-  "exceptionsValidUntil": null,
-  "_exceptionsValidUntil": "Data (RRRR-MM-DD), do której lista wyjątków jest aktualna. Po tej dacie status znika automatycznie – błędny status jest gorszy niż brak statusu.",
+  "exceptionsValidUntil": "2027-09-30",
+  "_exceptionsValidUntil": "Właściciel (01.10.2026): w święta otwarte jak w zwykły dzień tygodnia, brak wyjątków. Data, do której ta informacja obowiązuje – po niej status znika, dopóki ktoś jej nie przedłuży.",
   "weekly": {
     "mon": null,
     "tue": null,
@@ -14,10 +14,36 @@
     "sat": null,
     "sun": null
   },
-  "_weeklyExample": { "mon": [{ "open": "12:00", "close": "00:00" }], "fri": [{ "open": "12:00", "close": "01:45" }] },
+  "_weeklyExample": {
+    "mon": [
+      {
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "fri": [
+      {
+        "open": "12:00",
+        "close": "01:45"
+      }
+    ]
+  },
   "exceptions": [],
   "_exceptionsExample": [
-    { "date": "2026-12-24", "hours": [], "note": "Wigilia – zamknięte" },
-    { "date": "2026-12-31", "hours": [{ "open": "12:00", "close": "03:00" }], "note": "Sylwester" }
+    {
+      "date": "2026-12-24",
+      "hours": [],
+      "note": "Wigilia – zamknięte"
+    },
+    {
+      "date": "2026-12-31",
+      "hours": [
+        {
+          "open": "12:00",
+          "close": "03:00"
+        }
+      ],
+      "note": "Sylwester"
+    }
   ]
 }
