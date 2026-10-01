@@ -87,17 +87,17 @@ export default {
 
   whatsHere: {
     h2: 'What you’ll find here',
-    intro: 'A relaxed neighbourhood bar in Kazimierz. Coffee and lemonades from noon, a street-side garden and a room for groups.',
+    intro: 'A relaxed neighbourhood bar in Kazimierz. Coffee and lemonades from noon, small snacks, two gardens and a room for groups.',
     tiles: [
       {
         title: 'A spot in Kazimierz',
-        text: `A small, relaxed bar on Mostowa Street, a short walk from the Father Bernatek Footbridge. Come as you are.`,
+        text: `A small, relaxed bar on Mostowa Street, a short walk from the Father Bernatek Footbridge. Come as you are – no dress code.`,
         photo: 'W1',
         alt: 'Inside Bar Gwar: tables in warm light',
       },
       {
         title: 'Outdoor seating',
-        text: 'Tables outside on the street – see Outdoor seating below.',
+        text: 'Two gardens: on the street and on the patio – see Outdoor seating below.',
         link: 'garden',
       },
       {
@@ -107,8 +107,12 @@ export default {
         alt: 'A cup of coffee on a table in daylight',
       },
       {
+        title: 'Snacks',
+        text: 'Small snacks for the table, such as olives and nachos.',
+      },
+      {
         title: 'Groups & birthdays',
-        text: 'Coming as a bigger group? We have a room for birthdays and team nights out.',
+        text: 'Coming as a bigger group? We have a room for birthdays and team nights out – up to 50 people.',
         link: 'booking',
       },
       {
@@ -116,11 +120,18 @@ export default {
         text: 'We’re a self-service bar – order at the counter and the team will help you choose.',
       },
     ],
+    factsLabel: 'Good to know',
+    facts: [
+      { icon: 'wifi', text: 'Free Wi-Fi' },
+      { icon: 'dog', text: 'Dogs welcome' },
+      { icon: 'card', text: 'Card and phone payments' },
+    ],
   },
 
   garden: {
     h2: 'Outdoor seating on Mostowa Street',
-    inSeason: 'On warm days we sit outside, right on Mostowa Street.',
+    inSeason: 'On warm days we sit outside. We have two gardens: at the front, right on Mostowa Street (8 tables), and on the patio (about 25 people, open until 22:00).',
+    details: 'Only patio tables can be booked.',
     offSeason: 'Our garden is back in spring – it’s warm and cosy inside.',
     photo1Alt: 'Bar Gwar’s outdoor seating on Mostowa Street during the day',
     photo2Alt: 'Bar Gwar’s outdoor seating in the evening, tables under lights',
@@ -129,6 +140,7 @@ export default {
   booking: {
     h2: 'Book a table, groups & birthdays',
     text: 'Coming as a group or planning a birthday? Book a table or the room – we’ll get back to you to confirm.',
+    details: 'The room holds up to 50 people. Outside, only patio tables can be booked.',
     callText: 'Want a table today? Calling is quickest.',
     photoAlt: 'The room at Bar Gwar set up for a group',
   },
@@ -150,11 +162,15 @@ export default {
     items: (c) => [
       ['Where is Bar Gwar?', `${c.address}, by the Father Bernatek Footbridge.`],
       ['How do I get there from the Father Bernatek Footbridge?', 'From the footbridge, turn into Mostowa Street and walk to number 8 – look for the GWAR sign.'],
-      ['Do you have outdoor seating?', 'Yes, we have a garden on Mostowa Street.'],
+      ['Do you have outdoor seating?', 'Yes, two gardens: at the front on Mostowa Street (8 tables) and on the patio (about 25 people, open until 22:00). Only patio tables can be booked.'],
       ['Can I book a table?', `Yes – use our <a href="${c.reservationUrl}" data-ev="reservation_click" data-cta="faq" data-newtab-desktop>booking form</a> or call us on <a href="${c.tel}" data-ev="click_to_call" data-cta="faq">${c.phone}</a>.`],
-      ['Can we come as a larger group?', 'Yes. We welcome groups and host birthdays in our room – book it with the form or give us a call.'],
+      ['Can we come as a larger group?', 'Yes. We welcome groups and host birthdays in our room for up to 50 people – book it with the form or give us a call.'],
+      ['Can I pay by card?', 'Yes, by card or phone.'],
+      ['Are dogs welcome?', 'Yes, dogs are welcome.'],
+      ['Is the bar wheelchair accessible?', 'Unfortunately not – there is a step at the entrance. There is a toilet on site.'],
       ['What are your opening hours?', c.hoursSentence],
       ['How do I order?', 'Order at the counter – we’re a self-service bar.'],
+      ['Is there Wi-Fi?', 'Yes, it’s free.'],
     ],
     hoursSentence: (rows) => rows.map(([d, h]) => `${d}: ${h}`).join('; ') + '.',
   },

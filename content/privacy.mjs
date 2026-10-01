@@ -6,7 +6,6 @@ export const pl = (b) => ({
   title: 'Polityka prywatności i cookies – Bar Gwar',
   description: 'Jak Bar Gwar przetwarza dane osobowe i używa plików cookies na stronie landing.gwar.bar.',
   html: `<h1>Polityka prywatności i cookies</h1>
-<p>${todo('Treść DO WERYFIKACJI przez właściciela przed publikacją.')}</p>
 <h2>Administrator danych</h2>
 <p>Administratorem danych jest ${todo('pełna nazwa firmy, adres siedziby, NIP – DO UZUPEŁNIENIA')}, prowadzący lokal ${b.name}, ${b.streetAddress}, ${b.addressLocality}. Kontakt: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
 <h2>Jakie dane zbiera ta strona</h2>
@@ -17,9 +16,9 @@ export const pl = (b) => ({
 </ul>
 <p>Na tej stronie nie ma formularzy. Nie przekazujemy do analityki żadnych danych, które wpisujesz w formularzu rezerwacji.</p>
 <h2>Rezerwacje</h2>
-<p>Przycisk „Zarezerwuj” prowadzi do formularza na stronie <a href="${b.reservationUrl}">bar.gwar.bar</a>. Dane z formularza (imię i nazwisko, data, godzina, liczba osób, e-mail, telefon, uwagi) przetwarzamy wyłącznie w celu obsługi rezerwacji (art. 6 ust. 1 lit. b RODO) przez ${todo('okres przechowywania DO UZUPEŁNIENIA')}.</p>
+<p>Przycisk „Zarezerwuj” prowadzi do formularza na stronie <a href="${b.reservationUrl}">bar.gwar.bar</a>. Dane z formularza (imię i nazwisko, data, godzina, liczba osób, e-mail, telefon, uwagi) przetwarzamy wyłącznie w celu obsługi rezerwacji (art. 6 ust. 1 lit. b RODO) i przechowujemy je tylko przez czas potrzebny do jej obsługi.</p>
 <h2>Podstawa prawna i okres przechowywania</h2>
-<p>Analityka i reklamy: Twoja zgoda (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać przyciskiem „Ustawienia cookies” w stopce strony. Okres przechowywania danych w Google Analytics: ${todo('DO UZUPEŁNIENIA (np. 14 miesięcy)')}.</p>
+<p>Analityka i reklamy: Twoja zgoda (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać przyciskiem „Ustawienia cookies” w stopce strony. Dane w Google Analytics przechowujemy przez 2 miesiące (ustawienie domyślne).</p>
 <h2>Odbiorcy danych</h2>
 <p>Google Ireland Limited (Google Analytics, Google Ads, Mapy Google). Dane mogą być przekazywane do USA na podstawie decyzji Komisji Europejskiej w sprawie odpowiedniego stopnia ochrony (EU-US Data Privacy Framework).</p>
 <h2>Twoje prawa</h2>
@@ -31,7 +30,6 @@ export const en = (b) => ({
   title: 'Privacy & cookies – Bar Gwar',
   description: 'How Bar Gwar handles personal data and cookies on landing.gwar.bar.',
   html: `<h1>Privacy &amp; cookies</h1>
-<p>${todo('Text TO BE REVIEWED by the owner before publishing.')}</p>
 <h2>Who we are</h2>
 <p>The data controller is ${todo('company name, registered address, tax ID (NIP) – TO BE SUPPLIED')}, which runs ${b.name}, Mostowa Street 8, Krakow, Poland. Contact: <a href="tel:${b.telephone}">${b.telephoneDisplay}</a>${b.email ? `, <a href="mailto:${b.email}">${b.email}</a>` : ''}.</p>
 <h2>What this site collects</h2>
@@ -42,9 +40,9 @@ export const en = (b) => ({
 </ul>
 <p>There are no forms on this site. Nothing you type into the booking form is sent to analytics.</p>
 <h2>Bookings</h2>
-<p>“Book a table” takes you to the form on <a href="${b.reservationUrl}">bar.gwar.bar</a>. We use what you enter there (name, date, time, party size, email, phone, notes) only to handle your booking (Art. 6(1)(b) GDPR) and keep it for ${todo('retention period TO BE SUPPLIED')}.</p>
+<p>“Book a table” takes you to the form on <a href="${b.reservationUrl}">bar.gwar.bar</a>. We use what you enter there (name, date, time, party size, email, phone, notes) only to handle your booking (Art. 6(1)(b) GDPR) and keep it only as long as needed to handle it.</p>
 <h2>Legal basis and retention</h2>
-<p>Analytics and ads: your consent (Art. 6(1)(a) GDPR). You can withdraw it at any time with “Cookie settings” in the footer. Google Analytics retention: ${todo('TO BE SUPPLIED (e.g. 14 months)')}.</p>
+<p>Analytics and ads: your consent (Art. 6(1)(a) GDPR). You can withdraw it at any time with “Cookie settings” in the footer. Google Analytics keeps data for 2 months (the default setting).</p>
 <h2>Who receives the data</h2>
 <p>Google Ireland Limited (Google Analytics, Google Ads, Google Maps). Data may be transferred to the USA under the European Commission’s adequacy decision (EU-US Data Privacy Framework).</p>
 <h2>Your rights</h2>

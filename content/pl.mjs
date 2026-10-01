@@ -89,13 +89,13 @@ export default {
     tiles: [
       {
         title: 'Miejsce na Kazimierzu',
-        text: `Kameralny bar przy Mostowej, kilka kroków od Kładki Ojca Bernatka. Swobodna atmosfera.`,
+        text: `Kameralny bar przy Mostowej, kilka kroków od Kładki Ojca Bernatka. Swobodna atmosfera, bez dress code’u.`,
         photo: 'W1',
         alt: 'Wnętrze Bar Gwar: sala ze stolikami w ciepłym świetle',
       },
       {
         title: 'Ogródek',
-        text: 'Stoliki na zewnątrz – szczegóły w sekcji Ogródek.',
+        text: 'Dwa ogródki: od ulicy i na patio – szczegóły w sekcji Ogródek.',
         link: 'garden',
       },
       {
@@ -105,8 +105,12 @@ export default {
         alt: 'Filiżanka kawy na stoliku w świetle dziennym',
       },
       {
+        title: 'Przekąski',
+        text: 'Małe przekąski do stolika, np. oliwki, nachosy.',
+      },
+      {
         title: 'Grupy i urodziny',
-        text: 'Większa grupa? Mamy salę na urodziny i integracje.',
+        text: 'Większa grupa? Mamy salę na urodziny i integracje – do 50 osób.',
         link: 'booking',
       },
       {
@@ -114,11 +118,18 @@ export default {
         text: 'U nas zamawia się przy barze – podejdź, załoga pomoże wybrać.',
       },
     ],
+    factsLabel: 'Udogodnienia',
+    facts: [
+      { icon: 'wifi', text: 'Bezpłatne Wi-Fi' },
+      { icon: 'dog', text: 'Psy mile widziane' },
+      { icon: 'card', text: 'Karta i płatność telefonem' },
+    ],
   },
 
   garden: {
     h2: 'Ogródek przy Mostowej',
-    inSeason: 'W ciepłe dni siadamy na zewnątrz, przy samej ulicy Mostowej.',
+    inSeason: 'W ciepłe dni siadamy na zewnątrz. Mamy dwa ogródki: od frontu, przy samej ulicy Mostowej (8 stolików), i na patio (ok. 25 osób, czynne do 22:00).',
+    details: 'Stolik można zarezerwować tylko w ogródku na patio.',
     offSeason: 'Ogródek wraca wiosną – w środku czeka ciepłe wnętrze.',
     photo1Alt: 'Ogródek Bar Gwar przy ul. Mostowej w ciągu dnia',
     photo2Alt: 'Ogródek Bar Gwar wieczorem, stoliki w świetle lamp',
@@ -127,6 +138,7 @@ export default {
   booking: {
     h2: 'Rezerwacje, grupy i urodziny',
     text: 'Przychodzisz większą grupą albo planujesz urodziny? Zarezerwuj stolik lub salę – odezwiemy się z potwierdzeniem.',
+    details: 'Sala mieści do 50 osób. Na zewnątrz rezerwujemy stoliki tylko w ogródku na patio.',
     callText: 'Rezerwacja na dziś? Najszybciej telefonicznie.',
     photoAlt: 'Sala w Bar Gwar przygotowana dla grupy',
   },
@@ -148,11 +160,15 @@ export default {
     items: (c) => [
       ['Gdzie znajduje się GWAR?', `${c.address} – na Kazimierzu, przy Kładce Ojca Bernatka.`],
       ['Jak dojść z Kładki Ojca Bernatka?', 'Z kładki skręć w ul. Mostową i idź do numeru 8 – szukaj szyldu GWAR.'],
-      ['Czy GWAR ma ogródek?', 'Tak, mamy ogródek przy Mostowej.'],
+      ['Czy GWAR ma ogródek?', 'Tak, dwa: od frontu przy ul. Mostowej (8 stolików) i na patio (ok. 25 osób, czynny do 22:00). Rezerwować można tylko stoliki na patio.'],
       ['Czy można zarezerwować miejsce?', `Tak – przez <a href="${c.reservationUrl}" data-ev="reservation_click" data-cta="faq" data-newtab-desktop>formularz rezerwacji</a> lub telefonicznie pod numerem <a href="${c.tel}" data-ev="click_to_call" data-cta="faq">${c.phone}</a>.`],
-      ['Czy można przyjść większą grupą?', 'Tak, przyjmujemy grupy i organizujemy urodziny w sali. Zarezerwuj ją przez formularz albo zadzwoń.'],
+      ['Czy można przyjść większą grupą?', 'Tak, przyjmujemy grupy i organizujemy urodziny w sali – do 50 osób. Zarezerwuj ją przez formularz albo zadzwoń.'],
+      ['Czy można płacić kartą?', 'Tak, kartą i telefonem.'],
+      ['Czy można przyjść z psem?', 'Tak, psy są mile widziane.'],
+      ['Czy lokal jest dostępny dla wózków?', 'Niestety nie – przy wejściu jest próg. Toaleta jest na miejscu.'],
       ['W jakich godzinach jesteście otwarci?', c.hoursSentence],
       ['Jak zamawiać?', 'Zamawiasz przy barze – jesteśmy lokalem samoobsługowym.'],
+      ['Czy macie Wi-Fi?', 'Tak, bezpłatne.'],
     ],
     hoursSentence: (rows) => rows.map(([d, h]) => `${d}: ${h}`).join('; ') + '.',
   },
