@@ -41,6 +41,7 @@ export default {
   days: {
     mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday', fri: 'Friday', sat: 'Saturday', sun: 'Sunday',
   },
+  dayRange: (a, b) => `${a}–${b}`,
   hoursFallbackRows: ['Monday–Thursday', 'Friday–Saturday', 'Sunday'],
   closedLabel: 'Closed',
   hoursTodo: todo('TO BE CONFIRMED'),
@@ -65,27 +66,19 @@ export default {
     h2: 'How to find us',
     address: (b, postal) => `Mostowa Street 8, ${postal} Krakow – Kazimierz (the old Jewish Quarter)`,
     walkLabel: 'On foot:',
-    intro: `Cross the Father Bernatek Footbridge to the Kazimierz side and walk up Mostowa Street – we’re at number 8. ${todo('Route TO BE CHECKED on site')}`,
+    intro: `Cross the Father Bernatek Footbridge to the Kazimierz side and walk up Mostowa Street – we’re at number 8.`,
     landmarks: [
       {
         name: 'Father Bernatek Footbridge',
-        text: `The pedestrian bridge with acrobat sculptures. From the bridge, turn into Mostowa Street – we’re on the ${todo('left/right – TO BE CONFIRMED')} side.`,
-        time: todo('time TO BE MEASURED'),
+        text: 'The pedestrian bridge with acrobat sculptures. From the bridge, turn into Mostowa Street and walk to number 8.',
       },
       {
         name: 'Riverside boulevards and Podgórze',
         text: 'Cross the footbridge to the Kazimierz side and walk up Mostowa Street.',
-        time: todo('time TO BE MEASURED'),
-      },
-      {
-        name: 'Plac Nowy square',
-        text: todo('Route TO BE WRITTEN after walking it on site'),
-        time: todo('time TO BE MEASURED'),
       },
       {
         name: 'Mostowa Street',
-        text: `Look for the GWAR sign at number 8. Other venues share this address – ${todo('entrance description TO BE SUPPLIED')}.`,
-        time: null,
+        text: 'Look for the GWAR sign at number 8. Other venues share this address – go in under the GWAR sign.',
       },
     ],
     photoAlt: 'The door and number 8 at the entrance to Bar Gwar, seen from the Mostowa Street pavement',
@@ -94,11 +87,11 @@ export default {
 
   whatsHere: {
     h2: 'What you’ll find here',
-    intro: 'A relaxed neighbourhood bar in Kazimierz. Coffee and lemonades from noon, small snacks, a street-side garden and a room for groups.',
+    intro: 'A relaxed neighbourhood bar in Kazimierz. Coffee and lemonades from noon, a street-side garden and a room for groups.',
     tiles: [
       {
         title: 'A spot in Kazimierz',
-        text: `A small, relaxed bar on Mostowa Street, a short walk from the Father Bernatek Footbridge. Come as you are${todo(' – no dress code: TO BE CONFIRMED')}.`,
+        text: `A small, relaxed bar on Mostowa Street, a short walk from the Father Bernatek Footbridge. Come as you are.`,
         photo: 'W1',
         alt: 'Inside Bar Gwar: tables in warm light',
       },
@@ -109,17 +102,13 @@ export default {
       },
       {
         title: 'During the day',
-        text: `From noon: Mott coffee, Ronnefeldt tea and lemonades. ${todo('Current offer TO BE CONFIRMED')}`,
+        text: 'From noon: Mott coffee, Ronnefeldt tea and lemonades.',
         photo: 'W3',
         alt: 'A cup of coffee on a table in daylight',
       },
       {
-        title: 'Snacks',
-        text: `Small snacks for the table, such as olives and nachos. ${todo('TO BE CONFIRMED')}`,
-      },
-      {
         title: 'Groups & birthdays',
-        text: `Coming as a bigger group? We have a room for birthdays and team nights out. ${todo('Room capacity TO BE CONFIRMED')}`,
+        text: 'Coming as a bigger group? We have a room for birthdays and team nights out.',
         link: 'booking',
       },
       {
@@ -127,21 +116,12 @@ export default {
         text: 'We’re a self-service bar – order at the counter and the team will help you choose.',
       },
     ],
-    factsLabel: 'Good to know',
-    facts: [
-      { icon: 'wifi', text: 'Free Wi-Fi' },
-      { icon: 'dog', text: 'Dogs welcome' },
-      { icon: 'wheelchair', text: 'Wheelchair-accessible entrance' },
-      { icon: 'card', text: 'Card and phone payments' },
-    ],
-    factsTodo: todo('Amenities TO BE CONFIRMED by the owner'),
   },
 
   garden: {
     h2: 'Outdoor seating on Mostowa Street',
     inSeason: 'On warm days we sit outside, right on Mostowa Street.',
     offSeason: 'Our garden is back in spring – it’s warm and cosy inside.',
-    details: todo('Season, number of seats, whether outdoor tables can be booked, smoking rules – TO BE CONFIRMED'),
     photo1Alt: 'Bar Gwar’s outdoor seating on Mostowa Street during the day',
     photo2Alt: 'Bar Gwar’s outdoor seating in the evening, tables under lights',
   },
@@ -150,14 +130,12 @@ export default {
     h2: 'Book a table, groups & birthdays',
     text: 'Coming as a group or planning a birthday? Book a table or the room – we’ll get back to you to confirm.',
     callText: 'Want a table today? Calling is quickest.',
-    details: todo('Room capacity, minimum group size, any fees, whether bookings include the garden – TO BE CONFIRMED'),
     photoAlt: 'The room at Bar Gwar set up for a group',
   },
 
   reviews: {
     h2: 'What guests say',
     rating: (r) => `<strong>${r.rating.replace(',', '.')} ★</strong> · ${r.count.replace(' ', ',')} Google reviews (as of ${r.readDate.split('.').reverse().join('-')})`,
-    quotesTodo: todo('3 quotes TO BE ADDED from real Google reviews (criteria in the spec)'),
     month: (ym) => {
       const [y, m] = ym.split('-');
       return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][+m - 1] + ' ' + y;
@@ -171,17 +149,12 @@ export default {
     h2: 'FAQ',
     items: (c) => [
       ['Where is Bar Gwar?', `${c.address}, by the Father Bernatek Footbridge.`],
-      ['How do I get there from the Father Bernatek Footbridge?', `From the footbridge, turn into Mostowa Street – we’re at number 8. ${todo('Route and walking time TO BE MEASURED')}`],
-      ['How do I get there from Plac Nowy?', todo('Route and walking time TO BE MEASURED')],
-      ['Do you have outdoor seating?', `Yes, we have a garden on Mostowa Street. ${todo('Season and rules TO BE CONFIRMED')}`],
+      ['How do I get there from the Father Bernatek Footbridge?', 'From the footbridge, turn into Mostowa Street and walk to number 8 – look for the GWAR sign.'],
+      ['Do you have outdoor seating?', 'Yes, we have a garden on Mostowa Street.'],
       ['Can I book a table?', `Yes – use our <a href="${c.reservationUrl}" data-ev="reservation_click" data-cta="faq" data-newtab-desktop>booking form</a> or call us on <a href="${c.tel}" data-ev="click_to_call" data-cta="faq">${c.phone}</a>.`],
-      ['Can we come as a larger group?', `Yes. We welcome groups and host birthdays in our room. ${todo('Maximum group size TO BE CONFIRMED')}`],
-      ['Can I pay by card?', `Yes, by card or phone. ${todo('TO BE CONFIRMED')}`],
-      ['Are dogs welcome?', `Yes. ${todo('TO BE CONFIRMED')}`],
-      ['Is the bar wheelchair accessible?', `The entrance is wheelchair accessible. ${todo('Attribute and toilet TO BE CONFIRMED')}`],
+      ['Can we come as a larger group?', 'Yes. We welcome groups and host birthdays in our room – book it with the form or give us a call.'],
       ['What are your opening hours?', c.hoursSentence],
       ['How do I order?', 'Order at the counter – we’re a self-service bar.'],
-      ['Is there Wi-Fi?', `Yes, it’s free. ${todo('TO BE CONFIRMED')}`],
     ],
     hoursSentence: (rows) => rows.map(([d, h]) => `${d}: ${h}`).join('; ') + '.',
   },

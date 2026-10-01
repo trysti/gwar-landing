@@ -49,7 +49,7 @@ export function hoursRows(hours, c) {
   }
   return groups.map((g) => {
     const first = c.days[g.days[0]];
-    const label = g.days.length === 1 ? first : `${first}–${c.days[g.days[g.days.length - 1]]}`;
+    const label = g.days.length === 1 ? first : c.dayRange(first, c.days[g.days[g.days.length - 1]]);
     return [label, formatIntervals(g.list, c)];
   });
 }

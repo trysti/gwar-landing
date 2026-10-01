@@ -16,6 +16,8 @@ import { TODO_ATTR } from '../src/todo.mjs';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const strict = process.argv.includes('--strict');
+// Draft builds show placeholders for missing photos; publish builds simply omit them.
+const draft = process.argv.includes('--draft');
 const readJson = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 const hash = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 10);
 
@@ -83,7 +85,7 @@ const pages = [];
 const page = (path, html) => pages.push([path, html]);
 
 for (const [c, other] of [[pl, en], [en, pl]]) {
-  const ctx = { c, other, b: business, l: links(business, c.lang), hours, reviews, images, assets, ogImage: og };
+  const ctx = { c, other, b: business, l: links(business, c.lang), hours, reviews, images, assets, ogImage: og, draft };
   page(`${c.lang}/index.html`, landingPage(ctx));
   const p = privacy[c.lang](business);
   page(

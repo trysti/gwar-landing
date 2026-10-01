@@ -44,7 +44,7 @@ const btnBook = (c, l, loc, cls = 'btn btn-secondary') =>
 
 function photo(ctx, id, alt, { cls = '', eager = false, sizes = '(min-width: 900px) 50vw, 100vw' } = {}) {
   const img = ctx.images[id];
-  if (!img) return `<div class="photo photo-ph ${cls}" role="img" aria-label="${attr(alt)}">${ctx.c.ui.photoTodo(id)}</div>`;
+  if (!img) return ctx.draft ? `<div class="photo photo-ph ${cls}" role="img" aria-label="${attr(alt)}">${ctx.c.ui.photoTodo(id)}</div>` : '';
   const src = (w, ext) => `/assets/img/${img.base}-${w}.${ext}`;
   const set = (ext) => img.widths.map((w) => `${src(w, ext)} ${w}w`).join(', ');
   const mid = img.widths[Math.min(1, img.widths.length - 1)];
@@ -216,6 +216,18 @@ export function landingPage(ctx) {
   });
   const bookingNote = c.ui.bookingNote ? `<p class="btn-note">${c.ui.bookingNote}</p>` : '';
   const quotes = (reviews[c.lang] || []).slice(0, 3);
+  const heroPhoto = photo(ctx, 'F1', c.hero.photoAlt, { cls: 'hero-photo', eager: true });
+  const pair = (...html) => (html.some(Boolean) ? `<div class="photos-2">\n${html.join('\n')}\n</div>` : '');
+  const howPhotos = pair(
+    photo(ctx, 'L1', c.how.photoAlt, { sizes: '(min-width: 900px) 20vw, 50vw' }),
+    photo(ctx, 'L2', c.how.photo2Alt, { sizes: '(min-width: 900px) 20vw, 50vw' }),
+  );
+  const gardenPhotos = pair(
+    photo(ctx, 'G1', c.garden.photo1Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' }),
+    photo(ctx, 'G2', c.garden.photo2Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' }),
+  );
+  const bookPhoto = photo(ctx, 'W2', c.booking.photoAlt);
+  const split = (has, extra = '') => (has ? `container split ${extra}` : 'container');
 
   const tiles = c.whatsHere.tiles
     .map((t) => {
@@ -237,16 +249,16 @@ export function landingPage(ctx) {
           (q) =>
             `<li><figure class="quote"><blockquote><p>„${esc(q.text)}”</p></blockquote><figcaption>${esc(q.author)} · ${c.reviews.month(q.date)} · <a href="${attr(q.url)}" rel="noopener" data-newtab-desktop>${c.reviews.viaGoogle}</a></figcaption></figure></li>`,
         )
-        .join('')}</ul>${quotes.length < 3 ? `<p>${c.reviews.quotesTodo}</p>` : ''}`
-    : `<p>${c.reviews.quotesTodo}</p>`;
+        .join('')}</ul>`
+    : '';
 
   const body = `<body>
 ${header(ctx, { otherHref: other.path, anchorMap })}
 <main id="main">
 
-<section class="hero" id="start" aria-labelledby="h1">
+<section class="hero${heroPhoto ? '' : ' hero-text-only'}" id="start" aria-labelledby="h1">
 <div class="container">
-${photo(ctx, 'F1', c.hero.photoAlt, { cls: 'hero-photo', eager: true })}
+${heroPhoto}
 <div class="hero-text">
 <h1 id="h1">${c.hero.h1}</h1>
 <p class="hero-sub">${c.hero.sub}</p>
@@ -263,7 +275,7 @@ ${btnCall(c, l, 'hero')}
 </section>
 
 <section id="${a.directions}" aria-labelledby="h-dir">
-<div class="container split split-wide">
+<div class="${split(howPhotos, 'split-wide')}">
 <div>
 <h2 id="h-dir">${c.how.h2}</h2>
 <p class="address-big"><strong>${address}</strong></p>
@@ -273,10 +285,7 @@ ${landmarks}
 </ul>
 <div class="btn-row">${btnDirections(c, l, 'how_to_get_here')}</div>
 </div>
-<div class="photos-2">
-${photo(ctx, 'L1', c.how.photoAlt, { sizes: '(min-width: 900px) 20vw, 50vw' })}
-${photo(ctx, 'L2', c.how.photo2Alt, { sizes: '(min-width: 900px) 20vw, 50vw' })}
-</div>
+${howPhotos}
 </div>
 </section>
 
@@ -287,34 +296,30 @@ ${c.whatsHere.intro ? `<p class="lead">${c.whatsHere.intro}</p>` : ''}
 <ul class="tiles">
 ${tiles}
 </ul>
-<ul class="facts" aria-label="${attr(c.whatsHere.factsLabel)}">
+${c.whatsHere.facts ? `<ul class="facts" aria-label="${attr(c.whatsHere.factsLabel)}">
 ${c.whatsHere.facts.map((f) => `<li>${ICONS[f.icon]}${f.text}</li>`).join('\n')}
-</ul>
-<p>${c.whatsHere.factsTodo}</p>
+</ul>` : ''}
 </div>
 </section>
 
 <section id="${a.garden}" aria-labelledby="h-garden">
-<div class="container split">
+<div class="${split(gardenPhotos)}">
 <div>
 <h2 id="h-garden">${c.garden.h2}</h2>
 <p class="lead">${b.garden.inSeason ? c.garden.inSeason : c.garden.offSeason}</p>
-<p>${c.garden.details}</p>
+${c.garden.details ? `<p>${c.garden.details}</p>` : ''}
 <div class="btn-row">${btnDirections(c, l, 'garden')}</div>
 </div>
-<div class="photos-2">
-${photo(ctx, 'G1', c.garden.photo1Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' })}
-${photo(ctx, 'G2', c.garden.photo2Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' })}
-</div>
+${gardenPhotos}
 </div>
 </section>
 
 <section class="booking" id="${a.booking}" aria-labelledby="h-book">
-<div class="container split">
+<div class="${split(bookPhoto)}">
 <div>
 <h2 id="h-book">${c.booking.h2}</h2>
 <p class="lead">${c.booking.text}</p>
-<p>${c.booking.details}</p>
+${c.booking.details ? `<p>${c.booking.details}</p>` : ''}
 <div class="btn-row">
 ${btnBook(c, l, 'booking_section', 'btn btn-primary')}
 ${btnCall(c, l, 'booking_section')}
@@ -322,7 +327,7 @@ ${btnCall(c, l, 'booking_section')}
 ${bookingNote}
 <p class="btn-note">${c.booking.callText}</p>
 </div>
-${photo(ctx, 'W2', c.booking.photoAlt)}
+${bookPhoto}
 </div>
 </section>
 
