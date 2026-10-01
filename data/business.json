@@ -11,9 +11,13 @@
   "telephoneDisplay": "+48 453 433 852",
   "email": null,
   "_email": "gwar@gwar.bar – DO POTWIERDZENIA, czy ma być publiczny. Wpisz adres, aby go pokazać.",
-  "geo": { "latitude": 50.0480326, "longitude": 19.9460358, "confirmed": false },
+  "geo": {
+    "latitude": 50.0480326,
+    "longitude": 19.9460358,
+    "confirmed": false
+  },
   "googlePlaceId": null,
-  "googleProfileUrl": null,
+  "googleProfileUrl": "https://maps.app.goo.gl/imzjTp75oiqoPFCE8",
   "_googleProfileUrl": "Krótki, stabilny link z Profilu Firmy Google (np. https://maps.app.goo.gl/...).",
   "priceRange": null,
   "_priceRange": "20–40 zł – DO POTWIERDZENIA, czy pokazywać. Wpisz np. \"20–40 zł\", aby dodać do schema.",
