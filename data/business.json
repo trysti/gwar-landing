@@ -15,7 +15,7 @@
     "longitude": 19.9460358,
     "confirmed": false
   },
-  "googlePlaceId": null,
+  "googlePlaceId": "ChIJGwLyqt9bFkcR08ryDrlDBZY",
   "googleProfileUrl": "https://maps.app.goo.gl/imzjTp75oiqoPFCE8",
   "_googleProfileUrl": "Krótki, stabilny link z Profilu Firmy Google (np. https://maps.app.goo.gl/...).",
   "priceRange": null,
@@ -33,5 +33,6 @@
     "count": "1 153",
     "readDate": "01.10.2026",
     "_note": "Przed publikacją odczytać ponownie z Profilu Google i zaktualizować readDate."
-  }
+  },
+  "_googlePlaceId": "Odczytane z linku trasy z Map Google (geocode). Weryfikacja: https://www.google.com/maps/place/?q=place_id:ChIJGwLyqt9bFkcR08ryDrlDBZY musi pokazać Bar Gwar, nie PRZEŁOM ani samą Mostową 8."
 }
