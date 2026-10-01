@@ -22,8 +22,8 @@
   "_priceRange": "20–40 zł – DO POTWIERDZENIA, czy pokazywać. Wpisz np. \"20–40 zł\", aby dodać do schema.",
   "reservationUrl": "https://bar.gwar.bar/index.html#reservation",
   "siteUrl": "https://landing.gwar.bar",
-  "ga4MeasurementId": null,
-  "_ga4MeasurementId": "Np. G-XXXXXXX lub AW-XXXXXXX (Etap 3). Bez ID tag Google nie jest ładowany, zdarzenia trafiają tylko do dataLayer.",
+  "ga4MeasurementId": "AW-17300910083",
+  "_ga4MeasurementId": "Tag Google (Google Ads AW-17300910083). Można dopisać GA4 (G-…) w tym samym polu po zmianie na listę, gdy powstanie.",
   "garden": {
     "inSeason": true,
     "_inSeason": "false = poza sezonem: moduł Ogródek pokazuje tekst 'Ogródek wraca wiosną…'."
