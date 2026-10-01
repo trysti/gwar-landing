@@ -137,8 +137,8 @@ export default {
 
   booking: {
     h2: 'Rezerwacje, grupy i urodziny',
-    text: 'Na urodziny i większe spotkania najlepiej zarezerwować. Wyślij zgłoszenie przez formularz, a my potwierdzimy rezerwację.',
-    details: 'Sala mieści do 50 osób. Na zewnątrz rezerwujemy stoliki na patio.',
+    text: 'Robicie urodziny albo wpadacie większą ekipą? Dajcie znać przez formularz, a my zarezerwujemy dla Was miejsce i potwierdzimy rezerwację.',
+    details: 'W sali zmieści się do 50 osób. Jeśli wolicie posiedzieć na zewnątrz, zarezerwujemy Wam stoliki w ogródku na patio.',
     callText: 'Jeśli chcesz przyjść jeszcze dziś, zadzwoń.',
     photoAlt: 'Sala Bar Gwar: ceglana ściana, okrągłe lustro, zielona boazeria i stoliki',
   },

@@ -138,8 +138,8 @@ export default {
 
   booking: {
     h2: 'Book a table, groups & birthdays',
-    text: 'For birthdays and bigger groups it’s best to book. Send a request through the form and we’ll confirm.',
-    details: 'The room holds up to 50 people. Outside, we take bookings for the patio.',
+    text: 'Planning a birthday or coming with a bigger group? Let us know through the form and we’ll save you a spot and confirm your booking.',
+    details: 'The room fits up to 50 people. If you’d rather sit outside, we can book you tables on the patio.',
     callText: 'Want to come today? Give us a call.',
     photoAlt: 'Inside Bar Gwar: brick wall, round mirror, green panelling and tables',
   },
