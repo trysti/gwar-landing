@@ -68,7 +68,8 @@ if (existsSync(join(root, 'assets/img'))) {
     filter: (src) => !src.endsWith('.md'),
   });
 }
-const og = images.F1 && images.F1.og ? `/assets/img/${images.F1.og}` : null;
+const ogSrc = images.F1 || images.W2; // same photo as the hero
+const og = ogSrc && ogSrc.og ? `/assets/img/${ogSrc.og}` : null;
 
 writeFileSync(
   join(dist, 'favicon.svg'),

@@ -216,7 +216,12 @@ export function landingPage(ctx) {
   });
   const bookingNote = c.ui.bookingNote ? `<p class="btn-note">${c.ui.bookingNote}</p>` : '';
   const quotes = (reviews[c.lang] || []).slice(0, 3);
-  const heroPhoto = photo(ctx, 'F1', c.hero.photoAlt, { cls: 'hero-photo', eager: true });
+  // Until there is a facade photo (F1), the room photo (W2) leads the page and W1 moves to booking,
+  // so no photo appears twice and no tile grid is left with a single photo.
+  const heroId = ctx.images.F1 ? 'F1' : ctx.images.W2 ? 'W2' : 'F1';
+  const bookId = heroId === 'W2' ? 'W1' : 'W2';
+  const heroAlt = heroId === 'F1' ? c.hero.photoAlt : c.booking.photoAlt;
+  const heroPhoto = photo(ctx, heroId, heroAlt, { cls: 'hero-photo', eager: true });
   const pair = (...html) => (html.some(Boolean) ? `<div class="photos-2">\n${html.join('\n')}\n</div>` : '');
   const howPhotos = pair(
     photo(ctx, 'L1', c.how.photoAlt, { sizes: '(min-width: 900px) 20vw, 50vw' }),
@@ -226,14 +231,17 @@ export function landingPage(ctx) {
     photo(ctx, 'G1', c.garden.photo1Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' }),
     photo(ctx, 'G2', c.garden.photo2Alt, { sizes: '(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw' }),
   );
-  const bookPhoto = photo(ctx, 'W2', c.booking.photoAlt);
+  const bookPhoto = photo(ctx, bookId, bookId === 'W2' ? c.booking.photoAlt : c.whatsHere.tiles[0].alt);
   // Without photos a section becomes one centred column instead of a half-empty two-column grid.
   const split = (has, extra = '', narrow = true) => (has ? `container split ${extra}` : `container no-split${narrow ? ' narrow' : ''}`);
 
+  // Tile photos only when at least two are available (one photo would stretch its row of cards).
+  let tilePhotos = c.whatsHere.tiles.map((t) => t.photo).filter((id) => id && ctx.images[id] && id !== heroId && id !== bookId);
+  if (tilePhotos.length < 2) tilePhotos = [];
   const tiles = c.whatsHere.tiles
     .map((t) => {
       const body = `<div class="tile-body"><h3>${t.title}</h3><p>${t.text}${t.link ? ` <a href="#${a[t.link]}">→</a>` : ''}</p></div>`;
-      return `<li class="tile">${t.photo ? photo(ctx, t.photo, t.alt, { sizes: '(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw' }) : ''}${body}</li>`;
+      return `<li class="tile">${tilePhotos.includes(t.photo) ? photo(ctx, t.photo, t.alt, { sizes: '(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw' }) : ''}${body}</li>`;
     })
     .join('\n');
 

@@ -29,14 +29,19 @@ for (const file of readdirSync(src)) {
   const img = sharp(input).rotate(); // apply EXIF orientation; metadata is not copied to outputs
   const meta = await img.metadata();
   const ratio = (meta.orientation >= 5 ? meta.width / meta.height : meta.height / meta.width);
-  for (const w of WIDTHS) {
+  const srcW = meta.orientation >= 5 ? meta.height : meta.width;
+  // Never upscale: keep the widths the original can fill, plus its own width if it is smaller.
+  const widths = WIDTHS.filter((w) => w <= srcW);
+  if (!widths.length || widths[widths.length - 1] < Math.min(srcW, WIDTHS[WIDTHS.length - 1])) widths.push(Math.min(srcW, WIDTHS[WIDTHS.length - 1]));
+  for (const w of widths) {
     const r = img.clone().resize({ width: w, withoutEnlargement: true });
     await r.clone().avif({ quality: 50 }).toFile(join(out, `${base}-${w}.avif`));
     await r.clone().webp({ quality: 72 }).toFile(join(out, `${base}-${w}.webp`));
     await r.clone().jpeg({ quality: 78, mozjpeg: true }).toFile(join(out, `${base}-${w}.jpg`));
   }
-  const entry = { base, widths: WIDTHS, width: 1200, height: Math.round(1200 * ratio) };
-  if (id === 'F1') {
+  const maxW = widths[widths.length - 1];
+  const entry = { base, widths, width: maxW, height: Math.round(maxW * ratio) };
+  {
     entry.og = `${base}-og.jpg`;
     await img.clone().resize(1200, 630, { fit: 'cover' }).jpeg({ quality: 80, mozjpeg: true }).toFile(join(out, entry.og));
   }

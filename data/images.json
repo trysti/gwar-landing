@@ -5,7 +5,16 @@
   "L2": null,
   "O1": null,
   "O2": null,
-  "W1": null,
+  "W1": {
+    "base": "w1-3dda2429",
+    "widths": [
+      480,
+      603
+    ],
+    "width": 603,
+    "height": 402,
+    "og": "w1-3dda2429-og.jpg"
+  },
   "W2": {
     "base": "w2-c8b218d6",
     "widths": [
@@ -14,7 +23,8 @@
       1200
     ],
     "width": 1200,
-    "height": 800
+    "height": 800,
+    "og": "w2-c8b218d6-og.jpg"
   },
   "W3": null,
   "G1": null,
