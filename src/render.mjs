@@ -1,5 +1,5 @@
 // HTML templates. Pure functions: (content, data) -> string. No client-side framework.
-import { hoursRows, openingHoursSchema, statusEnabled, statusPayload } from './hours.mjs';
+import { dailyOpening, hoursRows, openingHoursSchema, statusEnabled, statusPayload } from './hours.mjs';
 import { todo } from './todo.mjs';
 
 export const esc = (s) =>
@@ -270,7 +270,7 @@ ${header(ctx, { otherHref: other.path, anchorMap })}
 ${heroPhoto}
 <div class="hero-text">
 <h1 id="h1">${c.hero.h1}</h1>
-<p class="hero-sub">${c.hero.sub}</p>
+<p class="hero-sub">${c.hero.sub(dailyOpening(hours))}</p>
 ${showStatus ? '<p class="status" id="status" hidden aria-live="polite"></p>' : ''}
 <div class="btn-row" id="hero-cta">
 ${btnDirections(c, l, 'hero')}
@@ -392,7 +392,7 @@ ${btnCall(c, l, 'map_section')}
 <section class="final" aria-labelledby="h-final">
 <div class="container">
 <h2 id="h-final">${c.final.h2}</h2>
-<p class="lead">${c.final.text}</p>
+<p class="lead">${c.final.text(dailyOpening(hours))}</p>
 <div class="btn-row">
 ${btnDirections(c, l, 'final_cta')}
 ${btnCall(c, l, 'final_cta')}

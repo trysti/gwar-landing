@@ -38,6 +38,13 @@ function formatIntervals(list, c) {
 }
 
 /** Rows [label, value] for the hours table; consecutive days with equal hours are grouped. */
+/** Opening time shared by every day of the week ("open daily from 12:00"), or null. */
+export function dailyOpening(hours) {
+  if (!weeklyComplete(hours)) return null;
+  const firsts = DAYS.map((d) => (hours.weekly[d][0] || {}).open);
+  return firsts.every((t) => t && t === firsts[0]) ? firsts[0] : null;
+}
+
 export function hoursRows(hours, c) {
   if (!weeklyComplete(hours)) return c.hoursFallbackRows.map((label) => [label, c.hoursTodo]);
   const groups = [];

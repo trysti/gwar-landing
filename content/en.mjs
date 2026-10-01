@@ -10,7 +10,7 @@ export default {
 
   title: 'Bar Gwar – Bar in Kazimierz, Krakow · Mostowa Street 8',
   description:
-    'A laid-back bar in Kazimierz, right by the Father Bernatek Footbridge. Two gardens, a room for up to 50, dogs welcome. Check hours and drop by!',
+    'Bar Gwar in Kazimierz, by the Father Bernatek Footbridge. Coffee from noon, two gardens, a room for up to 50. Hours, directions and bookings.',
   ogImageAlt: 'Inside Bar Gwar: brick wall, round mirror, green panelling and tables',
 
   anchors: {
@@ -56,9 +56,9 @@ export default {
 
   hero: {
     h1: 'Bar Gwar – a bar in Kazimierz, Krakow',
-    sub: 'On Mostowa Street, right by the Father Bernatek Footbridge over the Vistula. In the area? Come on in!',
-    bookLink: 'Want a table saved for you? Book here',
-    features: ['Two gardens', 'Groups & birthdays up to 50', 'Dogs welcome'],
+    sub: (open) => `On Mostowa Street, right by the Father Bernatek Footbridge over the Vistula.${open ? ` Open daily from ${open}.` : ''}`,
+    bookLink: 'Book a table',
+    features: ['Two gardens', 'Room for up to 50', 'Dogs welcome'],
     photoAlt: 'The entrance to Bar Gwar at Mostowa Street 8 in Kazimierz',
   },
 
@@ -66,19 +66,18 @@ export default {
     h2: 'How to find us',
     address: (b, postal) => `Mostowa Street 8, ${postal} Krakow – Kazimierz (the old Jewish Quarter)`,
     walkLabel: 'On foot:',
-    intro: 'Easiest way: cross the Father Bernatek Footbridge to the Kazimierz side and walk up Mostowa Street – we’re at number 8.',
     landmarks: [
       {
         name: 'Father Bernatek Footbridge',
-        text: 'The pedestrian bridge with the acrobat sculptures. From the bridge, turn into Mostowa Street and head for number 8 – that’s us.',
+        text: 'The one with the acrobat sculptures. On the Kazimierz side, turn into Mostowa Street. We’re at number 8.',
       },
       {
         name: 'Riverside boulevards and Podgórze',
-        text: 'Strolling along the river or over in Podgórze? Cross the footbridge to the Kazimierz side and walk up Mostowa Street.',
+        text: 'Cross the footbridge to Kazimierz and carry on along Mostowa Street.',
       },
       {
         name: 'Mostowa Street',
-        text: 'A few places share number 8 – look for the GWAR sign and come on in.',
+        text: 'A few places share number 8. Ours has the GWAR sign.',
       },
     ],
     photoAlt: 'The door and number 8 at the entrance to Bar Gwar, seen from the Mostowa Street pavement',
@@ -87,37 +86,37 @@ export default {
 
   whatsHere: {
     h2: 'What you’ll find here',
-    intro: 'A laid-back neighbourhood bar in Kazimierz. Coffee and lemonades from noon, snacks for the table, two gardens and a room for your crew.',
+    intro: 'A small neighbourhood bar in Kazimierz. Coffee from noon, snacks, two gardens and a room for groups.',
     tiles: [
       {
-        title: 'Laid-back Kazimierz',
-        text: 'A cosy spot on Mostowa Street, a short walk from the Father Bernatek Footbridge. Come as you are – no dress code.',
+        title: 'In Kazimierz',
+        text: 'A small bar on Mostowa Street, a short walk from the Father Bernatek Footbridge. No dress code.',
         photo: 'W1',
         alt: 'Inside Bar Gwar: tables in warm light',
       },
       {
         title: 'Two gardens',
-        text: 'One on the street, one on the patio. Take your pick.',
+        text: 'One on the street, one on the patio.',
         link: 'garden',
       },
       {
-        title: 'During the day',
-        text: 'From noon we brew Mott coffee and Ronnefeldt tea, plus lemonades. A nice break from sightseeing.',
+        title: 'Coffee from noon',
+        text: 'Mott coffee, Ronnefeldt tea and lemonades.',
         photo: 'W3',
         alt: 'A cup of coffee on a table in daylight',
       },
       {
         title: 'Snacks',
-        text: 'Olives, nachos and other small bites for the table.',
+        text: 'Olives, nachos and other small bits for the table.',
       },
       {
-        title: 'Groups & birthdays',
-        text: 'Our room fits up to 50 people – birthdays, team nights or just a big group of friends.',
+        title: 'Room for up to 50',
+        text: 'For birthdays, work get-togethers or a big group of friends.',
         link: 'booking',
       },
       {
         title: 'Order at the counter',
-        text: 'Come up to the counter and tell us what you fancy – we’re happy to help you choose.',
+        text: 'Tell us what you fancy. Not sure? We’ll help you pick.',
       },
     ],
     factsLabel: 'Good to know',
@@ -130,18 +129,18 @@ export default {
 
   garden: {
     h2: 'Outdoor seating on Mostowa Street',
-    inSeason: 'Whenever the weather plays along, we sit outside. Pick from two gardens: at the front, right on Mostowa Street (8 tables), or on the patio (about 25 people, open until 22:00).',
-    details: 'Want a guaranteed table outside? Book one on the patio – the front garden is first come, first served.',
-    offSeason: 'Our gardens are resting until spring – it’s warm and cosy inside.',
+    inSeason: 'We have two gardens. The front one, on the street, has 8 tables. The patio fits about 25 people and is open until 22:00.',
+    details: 'You can book the patio. Out front, just take any free table.',
+    offSeason: 'The gardens are back in spring. Until then, come inside.',
     photo1Alt: 'Bar Gwar’s outdoor seating on Mostowa Street during the day',
     photo2Alt: 'Bar Gwar’s outdoor seating in the evening, tables under lights',
   },
 
   booking: {
     h2: 'Book a table, groups & birthdays',
-    text: 'Birthday, team night or just a big group of friends? Book a table or the room and we’ll get back to you to confirm.',
+    text: 'For birthdays and bigger groups it’s best to book. Send a request through the form and we’ll confirm.',
     details: 'The room holds up to 50 people. Outside, we take bookings for the patio.',
-    callText: 'Fancy coming today? Give us a call – it’s quickest.',
+    callText: 'Want to come today? Give us a call.',
     photoAlt: 'Inside Bar Gwar: brick wall, round mirror, green panelling and tables',
   },
 
@@ -153,32 +152,32 @@ export default {
       return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][+m - 1] + ' ' + y;
     },
     viaGoogle: 'review on Google',
-    all: 'Read all our Google reviews',
+    all: 'All reviews on Google',
     note: 'Reviews come from Bar Gwar’s Google Business Profile; we don’t check whether reviewers have visited.',
   },
 
   faq: {
-    h2: 'Got questions?',
+    h2: 'FAQ',
     items: (c) => [
       ['Where is Bar Gwar?', `${c.address}, by the Father Bernatek Footbridge.`],
-      ['How do I get there from the Father Bernatek Footbridge?', 'From the footbridge, turn into Mostowa Street and head for number 8. Look for the GWAR sign – that’s us.'],
-      ['Do you have outdoor seating?', 'We’ve got two! One at the front on Mostowa Street (8 tables) and one on the patio (about 25 people, open until 22:00). We take bookings for the patio.'],
-      ['Can I book a table?', `Sure – use our <a href="${c.reservationUrl}" data-ev="reservation_click" data-cta="faq" data-newtab-desktop>booking form</a> or call us on <a href="${c.tel}" data-ev="click_to_call" data-cta="faq">${c.phone}</a>.`],
-      ['Can we come as a larger group?', 'Absolutely! Our room fits up to 50 people – perfect for birthdays and team nights. Book it with the form or give us a call.'],
+      ['How do I get there from the Father Bernatek Footbridge?', 'On the Kazimierz side, turn into Mostowa Street and walk to number 8. Look for the GWAR sign.'],
+      ['Do you have outdoor seating?', 'Yes, two. 8 tables out front and about 25 seats on the patio (until 22:00). Only the patio can be booked.'],
+      ['Can I book a table?', `Yes, through our <a href="${c.reservationUrl}" data-ev="reservation_click" data-cta="faq" data-newtab-desktop>booking form</a> or by phone: <a href="${c.tel}" data-ev="click_to_call" data-cta="faq">${c.phone}</a>.`],
+      ['Can we come as a larger group?', 'Yes. The room holds up to 50 people. Best to book ahead through the form or by phone.'],
       ['Can I pay by card?', 'Yes, by card or phone.'],
-      ['Are dogs welcome?', 'Of course – bring them along.'],
-      ['Is the bar wheelchair accessible?', 'Sorry, not yet – there’s a step at the entrance. We do have a toilet on site.'],
+      ['Are dogs welcome?', 'Yes, dogs are welcome.'],
+      ['Is the bar wheelchair accessible?', 'Sorry, no. There’s a step at the entrance. There is a toilet inside.'],
       ['What are your opening hours?', c.hoursSentence],
-      ['How do I order?', 'At the counter – come up, tell us what you fancy and we’ll happily help you choose.'],
+      ['How do I order?', 'At the bar. There’s no table service.'],
       ['Is there Wi-Fi?', 'Yes, it’s free.'],
     ],
-    hoursSentence: (rows) => rows.map(([d, h]) => `${d}: ${h}`).join('; ') + '.',
+    hoursSentence: (rows) => rows.map(([d, h]) => `${d} ${h}`).join(', ') + '.',
   },
 
   map: {
     h2: 'Map, hours & contact',
     loadLabel: 'Show Google Maps',
-    caption: 'A simple sketch of the area. Google Maps only loads when you click.',
+    caption: 'Sketch of the area. Google Maps loads when you click.',
     iframeTitle: 'Google Maps: Bar Gwar, Mostowa Street 8, Krakow',
     addressH: 'Address',
     phoneH: 'Phone',
@@ -192,8 +191,8 @@ export default {
   },
 
   final: {
-    h2: 'See you on Mostowa Street',
-    text: 'Drop by whenever you like – coffee, the garden and good company are waiting. Get directions, call us or book a table.',
+    h2: 'See you inside',
+    text: (open) => `Mostowa Street 8, Kazimierz.${open ? ` Open daily from ${open}.` : ''}`,
   },
 
   footer: {
@@ -203,13 +202,13 @@ export default {
   },
 
   consent: {
-    text: 'We’d like to know how people find us and whether our ads work. For that we need Google cookies – only if you say yes.',
+    text: 'With your consent we use Google cookies to see how people find us and how our ads are doing.',
     more: 'Details',
     accept: 'Accept',
     reject: 'Reject',
   },
 
   notFound: {
-    title: 'Oops, nothing here',
+    title: 'This page doesn’t exist',
   },
 };
