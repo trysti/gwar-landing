@@ -6,7 +6,16 @@
   "O1": null,
   "O2": null,
   "W1": null,
-  "W2": null,
+  "W2": {
+    "base": "w2-c8b218d6",
+    "widths": [
+      480,
+      768,
+      1200
+    ],
+    "width": 1200,
+    "height": 800
+  },
   "W3": null,
   "G1": null,
   "G2": null
