@@ -1,0 +1,23 @@
+{
+  "_comment": "Jedno źródło godzin: tabela, status w Hero, openingHoursSpecification (schema) i odpowiedź w FAQ. Musi być zgodne z Profilem Firmy Google. Godzina zamknięcia mniejsza niż otwarcia = po północy (np. 12:00–01:45 kończy się o 01:45 następnego dnia). Dzień zamknięty: []. null = DO UZUPEŁNIENIA.",
+  "timezone": "Europe/Warsaw",
+  "confirmed": false,
+  "_confirmed": "Ustaw true dopiero po ujednoliceniu z Profilem Google. Bez tego status Otwarte/Zamknięte się nie wyświetla.",
+  "exceptionsValidUntil": null,
+  "_exceptionsValidUntil": "Data (RRRR-MM-DD), do której lista wyjątków jest aktualna. Po tej dacie status znika automatycznie – błędny status jest gorszy niż brak statusu.",
+  "weekly": {
+    "mon": null,
+    "tue": null,
+    "wed": null,
+    "thu": null,
+    "fri": null,
+    "sat": null,
+    "sun": null
+  },
+  "_weeklyExample": { "mon": [{ "open": "12:00", "close": "00:00" }], "fri": [{ "open": "12:00", "close": "01:45" }] },
+  "exceptions": [],
+  "_exceptionsExample": [
+    { "date": "2026-12-24", "hours": [], "note": "Wigilia – zamknięte" },
+    { "date": "2026-12-31", "hours": [{ "open": "12:00", "close": "03:00" }], "note": "Sylwester" }
+  ]
+}

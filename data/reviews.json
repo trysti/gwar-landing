@@ -1,0 +1,6 @@
+{
+  "_comment": "Tylko prawdziwe opinie z Profilu Firmy Google (sekcja Opinie w specyfikacji). 3 na wersję językową, z ostatnich 12 miesięcy, bez wzmianek o napojach alkoholowych, bez konta właściciela. Tekst dokładny lub fragment bez zmiany sensu; author w formie z Google; date jako RRRR-MM; url do opinii lub profilu.",
+  "pl": [],
+  "en": [],
+  "_example": { "text": "…", "author": "Imię z Google", "date": "2026-07", "url": "https://maps.app.goo.gl/..." }
+}

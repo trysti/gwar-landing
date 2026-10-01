@@ -1,0 +1,34 @@
+{
+  "_comment": "Jedno źródło prawdy dla danych firmy (NAP). Wartości MUSZĄ być identyczne z Profilem Firmy w Google. null = DO UZUPEŁNIENIA (build --strict nie przejdzie).",
+  "name": "Bar Gwar",
+  "streetAddress": "Mostowa 8",
+  "postalCode": null,
+  "_postalCode": "DO POTWIERDZENIA: 31-051 (strona) czy 31-061 (Profil Google)",
+  "addressLocality": "Kraków",
+  "district": "Kazimierz",
+  "addressCountry": "PL",
+  "telephone": "+48453433852",
+  "telephoneDisplay": "+48 453 433 852",
+  "email": null,
+  "_email": "gwar@gwar.bar – DO POTWIERDZENIA, czy ma być publiczny. Wpisz adres, aby go pokazać.",
+  "geo": { "latitude": 50.0480326, "longitude": 19.9460358, "confirmed": false },
+  "googlePlaceId": null,
+  "googleProfileUrl": null,
+  "_googleProfileUrl": "Krótki, stabilny link z Profilu Firmy Google (np. https://maps.app.goo.gl/...).",
+  "priceRange": null,
+  "_priceRange": "20–40 zł – DO POTWIERDZENIA, czy pokazywać. Wpisz np. \"20–40 zł\", aby dodać do schema.",
+  "reservationUrl": "https://bar.gwar.bar/index.html#reservation",
+  "siteUrl": "https://landing.gwar.bar",
+  "ga4MeasurementId": null,
+  "_ga4MeasurementId": "Np. G-XXXXXXX lub AW-XXXXXXX (Etap 3). Bez ID tag Google nie jest ładowany, zdarzenia trafiają tylko do dataLayer.",
+  "garden": {
+    "inSeason": true,
+    "_inSeason": "false = poza sezonem: moduł Ogródek pokazuje tekst 'Ogródek wraca wiosną…'."
+  },
+  "reviews": {
+    "rating": "4,9",
+    "count": "1 153",
+    "readDate": "01.10.2026",
+    "_note": "Przed publikacją odczytać ponownie z Profilu Google i zaktualizować readDate."
+  }
+}

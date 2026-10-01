@@ -1,0 +1,13 @@
+{
+  "_comment": "Zdjęcia F1…G2 (sekcja Zdjęcia). null = brak zdjęcia, w jego miejscu placeholder DO UZUPEŁNIENIA. Wpisy generuje `npm run images` z oryginałów w photos/ (np. photos/F1.jpg). Na żadnym zdjęciu nie może być alkoholu.",
+  "F1": null,
+  "L1": null,
+  "L2": null,
+  "O1": null,
+  "O2": null,
+  "W1": null,
+  "W2": null,
+  "W3": null,
+  "G1": null,
+  "G2": null
+}
