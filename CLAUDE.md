@@ -12,7 +12,8 @@ npm run serve          # podgląd dist/ na http://localhost:8080/pl/ (najpierw b
 npm run images         # photos/ → assets/img/ + data/images.json (wymaga: npm install --no-save sharp)
 ```
 
-Nie ma testów jednostkowych ani lintera – `npm run check` jest testem. CI (`.github/workflows/pages.yml`)
+Nie ma testów jednostkowych ani lintera – `npm run check` jest testem. Hook w `.claude/settings.json`
+uruchamia go automatycznie po każdej edycji w `content/`, `data/`, `src/`, `assets/`, `scripts/`. CI (`.github/workflows/pages.yml`)
 uruchamia `check` przy każdym PR/pushu, a deploy na GitHub Pages tylko z `main` i tylko gdy przejdzie `check:strict`.
 Na gałęziach roboczych `check:strict` może nie przechodzić (otwarte kwestie) – to normalne, nie „naprawiaj” tego
 wymyślaniem danych.
