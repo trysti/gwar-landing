@@ -8,8 +8,8 @@
   "scripts": {
     "build": "node scripts/build.mjs --draft",
     "build:strict": "node scripts/build.mjs --strict",
-    "check": "node scripts/build.mjs --draft && node scripts/check-content.mjs",
-    "check:strict": "node scripts/build.mjs --strict && node scripts/check-content.mjs",
+    "check": "node scripts/build.mjs --draft && node scripts/check-content.mjs && node scripts/check-sitelinks.mjs",
+    "check:strict": "node scripts/build.mjs --strict && node scripts/check-content.mjs && node scripts/check-sitelinks.mjs",
     "images": "node scripts/images.mjs",
     "serve": "node scripts/serve.mjs"
   }

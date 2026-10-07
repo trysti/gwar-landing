@@ -26,6 +26,7 @@ npm run images         # eksport zdjęć z photos/ (wymaga: npm install --no-sav
 | `data/business.json` | NAP, telefon, kod pocztowy, Place ID, link do Profilu Google, ID tagu Google, ogródek w sezonie / poza, ocena z Google |
 | `data/hours.json` | godziny i wyjątki → tabela, status w Hero, schema, FAQ. `confirmed: true` + `exceptionsValidUntil` włączają status |
 | `data/reviews.json` | 3 prawdziwe opinie z Google na wersję językową |
+| `data/sitelinks.json` | linki do podstron (sitelinki) Google Ads, PL i EN – teksty, opisy, kotwice |
 | `data/images.json` | zdjęcia F1…G2 (wypełnia `npm run images`) |
 | `content/pl.mjs`, `content/en.mjs` | wszystkie teksty stron |
 | `content/privacy.mjs` | polityka prywatności (szkic do weryfikacji) |
@@ -54,3 +55,12 @@ Zdarzenia (`get_directions`, `click_to_call`, `reservation_click`, `address_clic
 Consent Mode v2 domyślnie `denied`. Tag Google ładuje się dopiero po wpisaniu `ga4MeasurementId`
 w `data/business.json` (Etap 3). Poza listą ze specyfikacji dodane są `cta_location`: `garden`
 (przycisk trasy w sekcji Ogródek), `header` (ikona telefonu), `faq` (linki w odpowiedziach FAQ).
+
+## Sitelinki Google Ads
+
+`data/sitelinks.json` – 7 sitelinków na wersję językową (Google pokazuje pełny format od 6). Każdy kieruje do sekcji
+landingu przez kotwicę, np. `https://landing.gwar.bar/pl/#rezerwacja`; `npm run check` wypisuje gotowe URL-e i pilnuje,
+żeby kotwice istniały, teksty mieściły się w limitach (25 / 35 znaków) i nie zawierały słów z Content Blacklist.
+Bez sitelinków „Menu”, „Cocktaile”, „Jedzenie” – landing nie ma takich sekcji, a te słowa łamią Content Blacklist.
+Jeśli Google Ads odrzuci sitelinki jako duplikaty URL (różnią się tylko `#…`), dopisz parametr przed kotwicą,
+np. `/pl/?sl=rezerwacja#rezerwacja` – strona go ignoruje.
