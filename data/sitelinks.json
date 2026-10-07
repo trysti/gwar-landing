@@ -1,0 +1,22 @@
+{
+  "_comment": "Linki do podstron (sitelinki) dla kampanii Google Ads. Kierują do kotwic sekcji landingu, więc nazwy kotwic muszą zgadzać się z `anchors` w content/pl.mjs i content/en.mjs – `npm run check` to sprawdza, razem z limitami znaków Google Ads (tekst 25, opisy 35) i Content Blacklist. Celowo bez Menu/Cocktaili/Jedzenia: landing nie ma takich sekcji, a słowa alkoholowe są na liście zakazanej.",
+  "limits": { "text": 25, "description": 35 },
+  "pl": [
+    { "text": "Jak do nas dojść", "anchor": "trasa", "description1": "Mostowa 8, przy Kładce Bernatka", "description2": "Kilka minut pieszo od bulwarów" },
+    { "text": "Co u nas znajdziesz", "anchor": "oferta", "description1": "Kawa od południa i przekąski", "description2": "Wi-Fi za darmo, psy mile widziane" },
+    { "text": "Ogródek przy Mostowej", "anchor": "ogrodek", "description1": "Dwa ogródki: od ulicy i patio", "description2": "Patio na ok. 25 osób, do 22:00" },
+    { "text": "Rezerwacje i urodziny", "anchor": "rezerwacja", "description1": "Sala na urodziny do 50 osób", "description2": "Zarezerwuj przez formularz" },
+    { "text": "Opinie gości", "anchor": "opinie", "description1": "Zobacz, co piszą goście", "description2": "Opinie z Profilu Firmy w Google" },
+    { "text": "Godziny i mapa", "anchor": "mapa", "description1": "Sprawdź, do której otwarte", "description2": "Adres, telefon i Mapy Google" },
+    { "text": "Najczęstsze pytania", "anchor": "faq", "description1": "Karta, Wi-Fi, psy, dostępność", "description2": "Krótkie odpowiedzi przed wizytą" }
+  ],
+  "en": [
+    { "text": "How to find us", "anchor": "directions", "description1": "Mostowa 8, by Bernatek Footbridge", "description2": "A short walk from the riverside" },
+    { "text": "What you'll find here", "anchor": "whats-here", "description1": "Coffee from noon and snacks", "description2": "Free Wi-Fi, dogs welcome" },
+    { "text": "Outdoor seating", "anchor": "garden", "description1": "Two gardens: street and patio", "description2": "Patio for about 25, until 22:00" },
+    { "text": "Bookings & birthdays", "anchor": "booking", "description1": "A room for up to 50 people", "description2": "Book through our online form" },
+    { "text": "Guest reviews", "anchor": "reviews", "description1": "See what our guests say", "description2": "Reviews from our Google profile" },
+    { "text": "Hours & map", "anchor": "map", "description1": "Check today's opening hours", "description2": "Address, phone and Google Maps" },
+    { "text": "FAQ", "anchor": "faq", "description1": "Card payments, Wi-Fi, dogs", "description2": "Quick answers before you visit" }
+  ]
+}
